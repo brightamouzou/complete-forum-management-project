@@ -63,15 +63,13 @@ input, textarea{
 
 @media(max-width:768px){
     form{
-        width: 60vh;
+        width: 70vh;
+
     }
     form label{
         font-size: 17px;
     }
 
-    input, textarea{
-        width: 100%;
-    }
 }
 
 main a{
