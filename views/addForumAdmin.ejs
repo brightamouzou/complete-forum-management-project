@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('./partials/head.ejs')%>
+    <link rel="stylesheet" href="navAdmin.css">
+    <link rel="stylesheet" href="mainAdmin.css">
+    <link rel="stylesheet" href="addForumAdmin.css">
+
+
+
+
+</head>
+<body>
+    <%-include('./partials/adminNav.ejs')%>
+
+    <main>
+            <form method="post" action="/api/forum/post"  id='addForumAdmin'>
+                    <h2>
+                        Ajouter un forum
+                    </h2>
+ 
+                    <div class="commentWriter">
+                        <label for="commentWriter">Label du  forum</label>
+                        <input type="text" name="name" id="commentWriter" required>
+
+                    </div>
+
+                    <div class="commentInput">
+                        <label for="commentInput" >Description</label>
+                        <textarea name="description" id="commentInput" cols="1" rows="5" required>
+
+                        </textarea>
+                    </div>
+
+                    
+                    <div class="forumImage">
+                        <label for="forumImage">Ajouter un image au forum</label>
+                        <input type="file" aria-details="Pour ajouter un photo au forum" id="forumImage">
+                    </div>
+                    
+                    <div class="commentSubmit">
+
+                        <input type="submit" value="Ajouter le forum" id="commentSubmit" disabled>
+                    </div>
+                    
+
+
+            </form>
+            
+
+
+    </main>
+    
+    <%-include('./partials/footer.ejs')%>
+    <script src="navAdmin.js"></script>
+    <script src="main.js"></script>
+    <script src="addForumAdmin.js"></script>
+
+</body>
+</html>

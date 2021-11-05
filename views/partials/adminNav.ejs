@@ -1,0 +1,58 @@
+<nav>
+        
+    <div class="logo">
+        <a href="/admin"><h1>FreeOpinion(Admin)</h1></a>
+    </div>
+
+
+    <div class="adminInfos">
+            
+        <div>
+            
+            <i class="fal fa-user-circle fa-2x"></i>&nbsp;<span class="adminUsername">
+                
+                <%=user.username%>
+            
+            </span>&nbsp;<i class="fas fa-chevron-down dropDownIcon"></i>
+        </div>
+        <div class="adminInfosContainer">
+            <span>Paramètres de l'admin</span> 
+            <ul>
+                <li>
+                    <a href="/admin/changeParams">
+                        Changer les paramètres de l'admin
+                    
+                    </a>
+                
+                
+                </li>
+
+              
+                <li><a href="/admin/ajouter un forum">Ajouter un forum</a> </li>
+
+                <li><a href="/admin/signup">Ajouter un admin</a> </li>
+
+                <li>
+                    <a href="/admin/changeParams">
+                       
+                        <form method="post" action="/api/admin/logout">
+                            <button>Deconnexion</button>
+                        
+                        </form>
+                    
+                    </a>
+                
+                
+                </li>
+
+
+               
+            </ul>
+
+        </div>
+
+    </div>
+
+  
+
+</nav>

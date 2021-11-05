@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%-include('./partials/head.ejs')%>
+        <link rel="stylesheet" href="nav.css">
+        <link rel="stylesheet" href="mainAdmin.css">
+
+        <title>Forum de discussion</title>
+    </head>
+<body>
+    <%-include('./partials/nav.ejs')%>
+    <main class="admin">
+
+       <form method="post" action="/api/admin/login">
+           <h2>Connexion au compte administrateur</h2>
+
+           <div class="error">
+               <%=error%>
+           </div>
+
+           <div class="userName">
+               <input type="text" name="username" id="userName" required >
+               <label for="userName">Nom d'utilisateur</label>
+           </div>
+
+           <div class="password">
+               <input type="password" name="password" id="password" required>
+               <label for="password">Mot de passe</label>
+            </div>
+
+
+
+            <div class="secretWord">
+                <input type="password" name="secretWord" id="secretWord" required >
+                <label for="secretWord">Mot secret d'administrateur</label>
+            </div>
+
+           
+            <div>
+                <input type="submit" value="Se connecter">
+            </div>
+        </form>
+    
+
+    </main>
+
+    <%-include('./partials/footer.ejs')%>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%-include('./partials/head.ejs') %>
+        <title>Forum de discussion</title>
+        <link rel="stylesheet" href="nav.css">
+        <link rel="stylesheet" href="mainIndex.css">
+        
+
+    </head>
+<body>
+    <%-include('./partials/nav.ejs') %>
+
+
+    <main class="main">
+
+        <div class="forum-infos">
+            <div class="forum-enonce">
+                <img src="" id="forumLabelImage"  alt="penser">
+                <h2 class="forum-titre">
+                    Question du jour
+                </h2>
+
+                <p class="forum-description">
+                    <%=currentForum.description%>
+                </p>
+            </div>
+            <form method="post" action="/api/comments/post/<%=currentForum._id%>">
+                <div class="commentWriter">
+                    <label for="commentWriter">Nom <span>(Facultatif)</span></label>
+                    <input type="text" id="commentWriter" name="username">
+
+                </div>
+
+                <div class="commentInput">
+                    <label for="commentInput" >Commentaire <span class="obligatory">*</span></label>
+                    <textarea name="content" id="commentInput" cols="30" rows="10" required>
+
+                    </textarea>
+                </div>
+
+                <div class="commentSubmit">
+
+                    <input type="submit" value="Soummettre" id="commentSubmit" disabled>
+                </div>
+                
+            </form>
+            
+
+
+        </div>
+
+        <div class="forumComments">
+            <h2>Commentaires</h2>
+            <%if (comments.length>0){%>
+
+                <%comments.forEach((ele, idx)=>{%>
+                    <div class="comments">
+                        
+                            <div class="commentInfos">
+                    
+                                <div>
+                                    <i class="fal fa-user-circle fa-2x"></i>
+                                    <% if (ele.username){%>
+                                        <span class="commentWriterName">
+                                            <%=ele.username%>
+
+                                            <%if (ele.isAdmin){%>
+
+                                                <i class="fas fa-check-circle" style="color: var(--navBar);"></i>
+
+                                            <%}%>
+                                
+                                        </span>
+            
+                                    <%}else{%>
+                                        <span class="commentWriterName">
+                                            user<%=String(Math.random()*10000).replace(".", "")%>
+                                        </span>
+                                    <%}%>
+            
+            
+                                
+                                </div>
+                                <div class="commentHour">
+                                    <%=("0"+new Date(ele.createdAt).getHours()).slice(-2)%>h<%=("0"+new Date(ele.createdAt).getMinutes()).slice(-2)%>
+                                    
+                                </div>
+                            </div>
+            
+                            <div class="comment">
+            
+                                <%=ele.content%>
+            
+                            </div>
+            
+                            <div class="commentsOpinion">
+                                <div>
+                                    <span class="like">
+                                        <label for="like<%=idx%>" title="like"><i class="far fa-heart fa-2x"></i></label>
+
+                                        <form method="post" action="/api/comments/like/<%=ele._id%>?_method=PUT">
+                                            <input type="submit" id="like<%=idx%>"/>
+                                            
+                                        </form>
+
+                                        <span><%=ele.likes%>
+                                        </span>
+                                    </span>
+            
+                                    <span class="dislike">
+                                        <label for="dislike<%=idx%>"><i class="far fa-heart-broken fa-2x"></i></label>    
+
+                                        <form method="post" action="/api/comments/dislike/<%=ele._id%>?_method=PUT">
+                                            <input type="submit" id="dislike<%=idx%>">
+                                            
+                                            
+                                        </form>
+
+                                        <span><%=ele.dislikes%></span>
+                                    </span>
+                                </div>
+            
+                                <div class="answer" id="answerContainer<%=idx%>">
+                                    <button class="anwserDispatch" id="anwserDispatch<%=idx%>">Repondre</button>
+
+                                    <form method="post" id="answer<%=idx%>" action="/api/answers/post/<%=currentForum._id%>/<%=ele._id%>">
+                                        <input type="text" name="username" placeholder="Nom" id="" style="width:40%; float:left;background: transparent;margin-left: 15px;">
+                                        <textarea name="content" id="answer"rows="10" placeholder="Commentaire"></textarea>
+                                        <button class="submitForm">Repondre</button>
+
+                                    </form>
+
+
+                                    
+                                    
+                                </div>
+            
+                                
+                            </div>
+
+                    <div class="commentAnswers">
+                        <%if(ele.answers.length){%>
+
+                            <%ele.answers.reverse().forEach((answer)=>{%>
+                                <div class="commentAnswer">
+                                    <div class="commentInfos">
+                    
+                                        <div>
+                                            <i class="fal fa-user-circle fa-2x"></i>
+                                            <% if (answer.username){%>
+                                                <span class="commentWriterName">
+                                                    <%=answer.username%> 
+
+                                                    <%if (answer.isAdmin){%>
+
+                                                        <i class="fas fa-check-circle" style="color: var(--navBar);"></i>
+
+                                                    <%}%>
+
+                                                    <em>a repondu à <%=ele.username%></em>
+                                                    
+
+                                        
+                                                </span>
+                    
+                                            <%}else{%>
+                                                <span class="commentWriterName">
+                                                    user<%=String(Math.random()*100).replace(".", "").split('').splice(0,11).join("")%><em>a repondu à <%=ele.username%></em>
+                                                </span>
+                                            <%}%>
+                                            
+                                            <div class="" style="margin-left: 3rem;">
+                                                <%=answer.content%>
+
+                                            </div>
+                    
+                    
+                                        
+                                        </div>
+                                        <div class="commentHour">
+                                            <%=("0"+new Date(answer.createdAt).getHours()).slice(-2)%>h<%=("0"+new Date(answer.createdAt).getMinutes()).slice(-2)%>
+                                        </div>
+                                    </div>
+                                </div>
+                            <%})%>
+                        <%}%>
+                    </div>
+
+                        
+                    </div> 
+
+                                        
+
+
+                <%})%>
+
+            <%}else{%>
+
+                <h2>Aucun commentaire pour l'instant. Soyez le premier à commenter! </h2>
+            <%}%>
+
+
+
+            
+        
+        </div>
+    
+        
+       
+    
+
+
+    </main>
+ 
+    
+    <%-include('./partials/footer.ejs')%>
+    <script src="main.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%-include('./partials/head.ejs')%>
+        <link rel="stylesheet" href="navAdmin.css">
+
+        <link rel="stylesheet" href="mainAdmin.css">
+        <title>Forum de discussion</title>
+    </head>
+<body>
+    <%-include('./partials/adminNav.ejs')%>
+    <main class="admin">
+        <p>
+        </p>
+       <form method="POST" action="/api/admin/signup"  id="signup">
+           <h2>Ajout d'un administrateur</h2>
+
+           <div class="error">
+               <%=error%>
+           </div>
+           <div class="adminName">
+                <input type="text" name="name" id="adminName" required >
+                <label for="adminName">Nom de l'administrateur</label>
+            </div>
+
+
+           <div class="userName">
+               <input type="text" name="username" id="userName" required >
+               <label for="userName">Nom d'utilisateur</label>
+           </div>
+
+           <div class="password">
+               <input type="password" name="password" id="password" required>
+               <label for="password">Mot de passe</label>
+            </div>
+
+            <div class="password">
+                <input type="password" name="passwordConfirm" id="passwordConfirm" required>
+                <label for="passwordConfirm">Confirmer le mot de passe</label>
+             </div>
+
+             <div class="secretWord">
+                <input type="password" name="secretWord" id="secretWord" required >
+                <label for="secretWord">Mot secret d'administrateur</label>
+            </div>
+
+            <div class="secretWord">
+                 <input type="password" name="secretWordConfirm" id="secretWordConfirm" required >
+                 <label for="secretWordConfirm">Confirmer le mot secret d'administrateur</label>
+            </div>
+
+
+            <div>
+                <input type="submit" value="Ajouter l'administrateur">
+            </div>
+        </form>
+    
+        
+
+    </main>
+
+    <%-include('./partials/footer.ejs')%>
+    
+    <script src="signup.js"></script>
+    <script src="navAdmin.js"></script>
+
+</body>
+</html>

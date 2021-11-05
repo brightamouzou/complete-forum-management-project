@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('./partials/head.ejs')%>
+    <title>La page demandée n'existe pas</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="notFound.css">
+
+    
+</head>
+<body>
+    <%-include('./partials/nav.ejs')%>
+    <main>
+
+        <div>
+            <img src="./images/error.jpg" alt="Erreur 404. La page n'existe pas">
+           <h2> Oups! La page que vous demandez n'a pas été trouvée sur notre serveur!</h2>
+            <a href="/"><button>Retour sur la page d'accueil</button></a>
+        </div>
+    </main>
+
+
+
+    <%-include('./partials/footer.ejs')%>
+</body>
+</html>

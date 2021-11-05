@@ -1,0 +1,147 @@
+nav{
+    display: inline-flex;
+    justify-content: space-around;
+    line-height: 10vh;
+    background: var(--navBar);
+    width: 100vw;
+    
+}
+
+
+.logo{
+    font-size: calc(1.8rem);
+    letter-spacing: 2px;
+}
+
+.adminInfos{
+
+    flex: .5;
+    
+    
+}
+.adminInfosContainer span{
+    text-align: center;
+    margin: auto;
+    margin-left: 5px;
+}
+
+.adminInfosContainer a:hover{
+
+    color: var(--black);
+}
+
+
+.adminInfos div:nth-child(1){
+    text-align: center;
+    margin: 0;
+    cursor: pointer;
+}
+
+
+
+.adminInfosContainer{
+    position: relative;
+    z-index: 50;
+    padding: inherit 30px;
+    width: 100%;
+    display: none;
+    transition: all ease-in 1s;
+    background:rgb(171, 71, 188);
+ 
+    
+}
+
+.adminInfosContainer button{
+    border: none;
+    background: transparent;
+    padding: 15px;
+    font-family: inherit;
+    font-size: inherit;
+    color: var(--white);
+}
+
+.adminInfosContainer button:hover{
+    color: var(--black);
+}
+
+
+
+
+.adminInfosContainer form{
+    border: none;
+}
+
+
+.adminInfos ul{
+    display: block;
+    background-color: inherit;
+    
+ 
+}
+
+.adminInfos ul li{
+  margin-left:10%;
+  cursor: pointer;
+   
+}
+.adminInfos ul ul{
+    display: block;
+    font-size: 15px;
+    background: inherit;
+}
+
+@media(max-width:768px) {
+    body{
+        overflow: auto;
+    }
+
+    .logo h1{
+        font-size: 2rem;
+    }
+
+    .adminInfos{
+
+        flex: .8;
+    }
+
+
+    .adminUsername{
+        display: none;
+    }
+    .adminInfosContainer{
+        position: absolute;
+        left: 0;
+        z-index: 50;
+        width: 100vw;
+        text-align: center;
+    }
+    
+}
+
+ul ul li a:hover{
+    color: black;
+}
+
+nav form{
+    width: fit-content;
+    padding: 0;
+    width: fit-content;
+    margin:0;
+}
+
+nav input{
+    display: none;
+}
+nav label{
+    cursor: pointer;
+}
+
+.dropDownIcon{
+    transition: ease .2s;
+}
+.dropUp .dropDownIcon{
+
+   transition: .2s;
+   transform: rotate(180deg);
+
+}

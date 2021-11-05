@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('./partials/head.ejs')%>
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="navAdmin.css">
+    <link rel="stylesheet" href="mainAdmin.css">
+    
+
+
+</head>
+<body>
+    
+
+    <%-include('./partials/adminNav.ejs')%>
+
+    <main class="admin">
+        <span><%=user.id%></span>
+
+        <form method="post" id="changeAdminParams" action="/api/admin/settings/changeParams/<%=user._id%>">
+            <h2>Changer les paramètres administrateurs</h2>
+
+           <div class="nbinfos">Vous n'etes pas tenu de remplir tous les champs(seulement ceux que vous souhaitez modifier)</div> 
+        
+           <div class="error">
+               <%=error%>
+           </div>
+ 
+            <div class="userName">
+                <input type="text" name="username" id="userName"  >
+                <label for="userName" >Nouveau nom d'utilisateur</label>
+            </div>
+
+             
+            <div class="password">
+                <input type="password" name="password" id="password" >
+                <label for="password">Mot de passe actuel</label>
+             </div>
+ 
+            <div class="passwordNew">
+                <input type="password" name="passwordNew" id="passwordNew" >
+                <label for="passwordNew">Nouveau mot de passe</label>
+             </div>
+
+             <div class="secretWord">
+                <input type="password" name="secretWord" id="secretWord"  >
+                <label for="secretWord">Mot secret d'aministrateur actuel</label>
+            </div>
+ 
+ 
+ 
+             <div class="secretWordNew">
+                 <input type="password" name="secretWordNew" id="secretWordNew"  >
+                 <label for="secretWordNew">Nouveau mot secret d'administrateur</label>
+             </div>
+ 
+            
+             <div>
+                 <input type="submit" value="Sauvegarder les changements">
+             </div>
+         </form>
+     
+ 
+     </main>
+    <%-include('./partials/footer.ejs')%>
+
+    <script src="navAdmin.js"></script>
+    <script src="changeParamsAdmin.js"></script>
+
+</body>
+</html>

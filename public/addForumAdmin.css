@@ -1,0 +1,49 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+form{
+    width: 80vh;
+    border: var(--border) 1.5px solid;
+    padding:2rem 1rem;
+        
+}
+
+form div{
+    margin:15px auto;   
+    position: relative; 
+}
+
+form label{
+    top: 0;
+    left: 5%;
+}
+
+
+
+form h2{
+    text-align: center;
+
+}
+
+.forumImage{
+    margin: 15px inherit;
+    width: 100%;
+}
+
+.forumImage  #forumImage{
+    display: none;
+    
+}
+
+.forumImage label{
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 10px;
+    width: 90%;
+    
+}
+

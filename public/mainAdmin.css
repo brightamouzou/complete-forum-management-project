@@ -1,0 +1,75 @@
+.admin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    margin: 2rem ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vh;
+    border: var(--border) 1.5px solid;
+    padding:2rem 1rem;
+        
+    
+}
+
+form h2{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+form div{
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+form label{
+    position: absolute;
+    left: 7%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: top ease-in-out .3s,
+                background ease-in-out .3s,
+                font-size ease-in-out .2s
+
+    ;
+    font-weight: bold;
+
+}
+
+input:focus~label,
+input:valid~label{
+
+    top: 18%;
+    letter-spacing: 1.5px;
+    font-size: 13px;
+    background-color: white;
+}
+
+input, textarea{
+    width: 90%;
+    padding: 20px;
+    margin: 15px;
+    font-size: 20px;
+}
+
+.nbinfos{
+    padding: 15px;
+}
+
+@media(max-width:768px){
+    form{
+        width: 60vh;
+    }
+    form label{
+        font-size: 17px;
+    }
+}
+
+main a{
+    color: blue;
+}

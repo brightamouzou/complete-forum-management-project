@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('./partials/head.ejs')%>
+    <title>Forum</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="adminLoggedMain.css">
+
+</head>
+<body>
+    <%-include('./partials/nav.ejs')%>
+    <main>
+
+        <%if (forums){%>
+            <div class="forums">
+
+                <%forums.forEach((ele)=>{%>
+                    
+                    <div href='/api/forums/:id'class="card forum">
+                        <div class="forumName">
+                            <h3>Label</h3>
+                            <div><%=ele.name%></div>
+                        </div>
+                        <div class="forumDescription">
+                            <h3>Description </h3>
+                                <% if (ele.description.split("").length>20){%>
+                                    <div><%=ele.description.split("").splice(0,20).join("")+"..."%></div>
+                                <%}else{%>
+                                    <div>
+                                        <%=ele.description%>
+                                    </div>
+                        
+                                <%}%>
+
+
+
+                            
+                        </div>
+
+                        <div class="commentsNumber">
+                            <h3>Nombre de commentaires </h3>
+                        </div>
+
+                        <div class="date">
+                            <h3>Date: </h3>
+                            <div><%=new Date(ele.createdAt).toLocaleDateString("en-GB")%> </div>
+                        </div>
+                        <div class="visitForum">
+
+                                <a href="/forums/<%=ele._id%>">
+                                    <button>
+                                        Visiter le froum
+                                    </button>
+
+
+                                </a>
+                         
+                        </div>
+
+
+                    </div>
+    
+                <%})%>
+            </div>
+
+
+        <%}else{%>
+        <p>Aucun forum pour le moment</p>
+        <%}%>
+
+    </main>
+
+
+
+    <%-include('./partials/footer.ejs')%>
+</body>
+</html>

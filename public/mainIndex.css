@@ -1,0 +1,352 @@
+body{
+
+    overflow-x: hidden;
+
+}
+
+.fas, .far, .fal{
+    margin: 5px;
+    color: var(--navBar);
+
+}
+
+
+
+main{
+    display: inline-flex;
+    margin: 0;
+    width: 100%;
+
+}
+
+.forum-infos img#forumLabelImage{
+    width: 200px;
+    height: 200px;
+    
+}
+
+.forum-infos h2{
+    margin-bottom: 10px;
+}
+
+.forum-description{
+    clear: both;
+}
+
+.forum-infos{
+    display:flex;
+    margin-bottom: .3px;
+    padding: 2rem 8px;
+    flex: 0.4;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    text-align: center;
+    border-right: 2px solid #ececec;
+    background: black;
+    color: var(--white);
+    height: fit-content;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+}  
+
+
+
+
+.forum-infos form{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin: 3rem;
+    
+}
+
+
+.commentWriter, .commentInput, .commentSubmit{
+    width: 80%;
+    text-align: left;
+    font-size: 13px;
+    padding: 5px;
+   
+}
+.obligatory{
+    color: red;
+}
+form label{
+    margin-left: 5px;
+}
+input, textarea{
+    outline: none;
+    border-radius: 3px;
+    margin: 5px;
+    border: 1px solid;
+    width: 100%;
+
+
+}
+input:focus, textarea:focus{
+    border: 1px solid blue;    
+}
+
+input{
+    padding:  10px;
+    
+}
+
+textarea{
+    margin-bottom: 40px;
+}
+
+input[type="submit"]:disabled{
+    cursor: not-allowed;
+
+}
+
+input[type="submit"]{
+    /*background-color: #4eb8;*/
+    cursor: pointer;
+}
+
+
+/*COMMENTS PART*/
+
+.forumComments{
+    display: inline;
+    flex:.6;
+    padding: 0;
+    margin-right: 1rem;
+    height: 100%;
+
+}
+
+.forumComments h2{
+    margin: 15px;
+    text-align: center;
+}
+
+.forumComments a{
+    color: var(--black);
+}
+.comments{
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+    flex-flow: column wrap;
+    margin: 10px;
+    background-color:#f0e6ec ;
+    padding: 10px;
+    overflow: auto;
+   
+}
+
+
+.commentAnswers{
+    margin-left: 3rem;
+    padding-left: 5px;
+    display: flex;
+    flex-flow: column wrap;
+    border-left: 5px solid white;
+
+
+}
+
+.commentAnswer{
+    margin-bottom: 20px;
+
+}
+
+
+
+.comments .commentInfos{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.commentInfos .commentHour{
+    margin-right: 10px;
+}
+
+.comments div{
+    margin-bottom: 10px;
+}
+
+.comments .commentsOpinion{
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.commentsOpinion div{
+    display: flex;
+    width: 15%;
+    justify-content: space-between;
+
+}
+
+.comments .comment{
+    margin-bottom: 15px;
+}
+
+.comments .commentWriterName{
+    position: relative;
+    bottom: 6px;
+}
+
+
+.commentsOpinion .like,.commentsOpinion .dislike {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*faire grossir les icones au hover*/
+.commentsOpinion i:hover{
+    transform: scale(1.2);
+    transition:ease .15s;
+}
+
+.commentsOpinion .answer{
+    margin:8px 10px 0 10px;
+    height: fit-content;
+    width: fit-content;
+}
+
+
+/*Button animation*/
+
+
+.forumComments button{
+    
+    width: inherit;
+    box-shadow: inset 0 0 0 0 var(--navBar);
+    transition: .3s all ease-in  ;
+    padding: 15px;
+    font-size: 17px;
+    background: transparent;
+    margin-top:-10px ;
+    height: inherit;
+    border: 1px solid white;
+
+
+}
+
+.forumComments form{
+    padding: 0;
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    display: none;
+    bottom: -100px;
+    
+}
+
+.forumComments form textarea{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 15px;
+    background: transparent;
+    padding: 15px;
+    height: 60px;
+}
+
+.forumComments  button:hover{
+    cursor: pointer;
+    box-shadow: inset 350px 0 0 0 rgb(171, 71, 188);
+
+}
+
+.forumComments .submitForm{
+    position: relative;
+    width: fit-content;
+    top: -2.35rem;
+    left: 10px;
+    
+}
+
+.like form, .dislike form{
+    display: none;
+}
+
+@media(min-width:900px){
+    .forumComments form textarea{
+        float: left;
+        margin-left: 15px;
+    }
+}
+
+
+@media(max-width:900px){
+    main{
+        display: inline-flex;
+        font-size: 15px;
+        flex-flow: column wrap;
+    }
+
+    .commentsOpinion .answer{
+        border: none;
+    }
+
+    .comments .commentWriterName{
+        padding-left: 10px;
+    }
+
+
+    .forumComments form textarea{
+        float: left;
+        margin-left: 15px;
+    }
+    .forumComments button{
+        width: 100px;
+        position: relative;
+        font-size: 15px;
+        padding: 8px;
+    }
+
+
+
+    .forumComments button.anwserDispatch{
+        position: relative;
+        width: fit-content;
+        top: 10px;
+        left: 10px;
+        border: 1px solid white;
+        
+    }
+
+    .commentAnswers{
+        margin-left: 1rem;
+        display: flex;
+        flex-flow: column wrap;
+        border-left: 5px solid white;
+    
+    
+    }
+    
+    .commentAnswer{
+        margin-bottom: 20px;
+    
+    }
+
+
+    .commentHour{
+        display: none;
+    }
+    
+
+    .forumComments .submitForm{
+        position: static;
+        margin-top: +5px;
+    }
+
+    .comments .commentsOpinion{
+        justify-content: space-between;
+    }
+
+
+
+
+}

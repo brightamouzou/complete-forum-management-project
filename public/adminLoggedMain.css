@@ -1,0 +1,72 @@
+main{
+ 
+    text-align: center;
+    overflow-x: hidden;
+}
+
+main a{
+    color: black;
+}
+
+
+.forum{
+    display: inline-block;
+    width: 350px;
+    border: var(--border) 1px solid;
+    padding: 15px;
+    margin: 15px;
+    word-wrap: break-word;
+    text-align: left;
+
+    
+}
+.forum div{
+    margin: .7rem  10px .7rem 0 10px ;
+}
+
+.forum h3{
+    padding-left:0 ;
+}
+
+.forum button{
+
+    padding: 15px;
+    background: var(--navBar);
+    border: none;
+    font-size: 18px;
+    border-radius: 3px;
+    width: 100%;
+    margin-bottom: 10px
+}
+
+
+/*.linkHover::before{
+    position: absolute;
+    height: 100%;
+    content: "";
+    width: 100%;
+    background: rgb(49, 47, 47);
+    opacity: .5;
+    
+}*/
+
+.forum .visitForum{
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    
+}
+
+.forum button{
+    position: relative;
+    box-shadow: inset 0 0 0 0 var(--navBar);
+    transition: .5s all ease-out  ;
+}
+
+.forum button:hover{
+    cursor: pointer;
+    box-shadow: inset 350px 0 0 0 rgb(171, 71, 188);
+
+
+}
