@@ -92,11 +92,18 @@ nav{
     background: inherit;
 }
 
+.responsiveUsername{
+    display: none;
+}
+
 @media(max-width:768px) {
     body{
         overflow: auto;
     }
     
+    .responsiveUsername{
+        display: block;
+    }
 
 
     .logo h1{
