@@ -12,11 +12,14 @@ Administrator features:
     -Add ohter administrators
     -Change its params(username , password, ....)
        
-User feactures:
+User features:
 
    -comment a forum
    -Like/Diskike a comment  
    -Reply to a comment
+
+
+
 
 
 
@@ -26,21 +29,21 @@ Ceci est un projet de gestion complète d'un forum avec plusieurs fonctionnalit�
 Fonctionnalités administrateur:
 
 
--Se connecter/déconnecter
+   -Se connecter/déconnecter
 
--Créer creer un forum et le publier
+   -Créer creer un forum et le publier
 
--Voir tous les forums crées
+   -Voir tous les forums crées
 
--Répondre à un forum avec le statut d'admin (certifié)
+   -Répondre à un forum avec le statut d'admin (certifié)
 
--supprimer un forum
+   -supprimer un forum
 
--Supprimer un commentaire d'un forum
+   -Supprimer un commentaire d'un forum
 
--Ajouter un nouvel administratateur
+   -Ajouter un nouvel administratateur
 
--Changer de nom d'utilisateur/mot de passe
+   -Changer de nom d'utilisateur/mot de passe
 
 
 
@@ -48,11 +51,11 @@ Fonctionnalités administrateur:
 Fonctionnalités utilisateur:
 
 
--Répondre à un forum
+   -Répondre à un forum
 
--Liker/Disliker un commentaire
+   -Liker/Disliker un commentaire
 
--Repondre à un commentaire
+   -Repondre à un commentaire
 
 
 N'hésiter pas à tester
