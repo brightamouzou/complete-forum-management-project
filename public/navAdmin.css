@@ -55,6 +55,7 @@ nav{
     border: none;
     background: transparent;
     padding: 15px;
+    padding-left: 0;
     font-family: inherit;
     font-size: inherit;
     color: var(--white);
@@ -75,6 +76,7 @@ nav{
 .adminInfos ul{
     display: block;
     background-color: inherit;
+    list-style: none;
     
  
 }
@@ -94,9 +96,11 @@ nav{
     body{
         overflow: auto;
     }
+    
+
 
     .logo h1{
-        font-size: 2rem;
+        font-size: 1.3rem;
     }
 
     .adminInfos{
@@ -113,8 +117,10 @@ nav{
         left: 0;
         z-index: 50;
         width: 100vw;
-        text-align: center;
+        text-align: left;
     }
+
+
     
 }
 
