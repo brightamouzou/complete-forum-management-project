@@ -14,7 +14,7 @@ router.get("/", isAuthCheck,forumsGetting,(req, res)=>{
    
     res.render("admin", {forums:req.session.forums, user:req.session.user})
  
-})isAuthCheck
+})
 
 router.get("/changeParams", isAuthCheck,  (req, res)=>{
 
