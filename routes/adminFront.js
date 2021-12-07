@@ -14,7 +14,7 @@ router.get("/", isAuthCheck,forumsGetting,(req, res)=>{
    
     res.render("admin", {forums:req.session.forums, user:req.session.user})
  
-})
+})isAuthCheck
 
 router.get("/changeParams", isAuthCheck,  (req, res)=>{
 
@@ -47,7 +47,7 @@ router.get("/login",isAuthCheckOnLoginPage, (req, res)=>{
 })
 
 
-router.get("/signup", isAuthCheck,(req, res)=>{
+router.get("/signup",(req, res)=>{
     res.render("adminSignup", {user:req.session.user, error:req.session.signupError});
     
 })
