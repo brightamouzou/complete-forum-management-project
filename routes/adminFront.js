@@ -47,7 +47,7 @@ router.get("/login",isAuthCheckOnLoginPage, (req, res)=>{
 })
 
 
-router.get("/signup",(req, res)=>{
+router.get("/signup",isAuthCheck,(req, res)=>{
     res.render("adminSignup", {user:req.session.user, error:req.session.signupError});
     
 })
