@@ -1,5 +1,6 @@
 This is a full forum management project with several features
    
+![interface](https://https://raw.githubusercontent.com/brightamouzou/complete-forum-management-project/main/public/images/interface.jpeg)
 Administrator features:
 
     -Log in / out   
@@ -17,8 +18,6 @@ User features:
    -comment a forum
    -Like/Diskike a comment  
    -Reply to a comment
-
-
 
 
 
