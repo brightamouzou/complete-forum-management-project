@@ -1,11 +1,11 @@
-This is a full forum management project with several features
+## This is a full forum management project with several features
 
-#  Deployment
+###  Deployment/Deploiement
 [https://full-forum.herokuapp.com/](https://full-forum.herokuapp.com/)
 
 ![interface](https://https://raw.githubusercontent.com/brightamouzou/complete-forum-management-project/main/public/images/interface.jpeg)
 
-Administrator features:
+###   Administrator features:
 
     -Log in / out   
     -create a forum  
@@ -17,7 +17,7 @@ Administrator features:
     -Add ohter administrators
     -Change its params(username , password, ....)
        
-User features:
+###   User features:
 
    -comment a forum
    -Like/Diskike a comment  
@@ -27,9 +27,9 @@ User features:
 
 
 
-Ceci est un projet de gestion complète d'un forum avec plusieurs fonctionnalités
+###   Ceci est un projet de gestion complète d'un forum avec plusieurs fonctionnalités
 
-Fonctionnalités administrateur:
+###   Fonctionnalités administrateur:
 
 
    -Se connecter/déconnecter
@@ -51,7 +51,7 @@ Fonctionnalités administrateur:
 
 
 
-Fonctionnalités utilisateur:
+###   Fonctionnalités utilisateur:
 
 
    -Répondre à un forum
