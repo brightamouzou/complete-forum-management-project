@@ -20,6 +20,7 @@ const commentsGetting=require("./middleware/commentsGetting")
 const  Comment=require("./models/Comment");
 const Answer = require("./models/Answer");
 
+const testsRoutes=require("./routes/testRoute")
 dotenv.config();
 mongoose.connect(process.env.MONGO_DB_URI, {useNewUrlParser:true ,useUnifiedTopology:true})
    .then(()=>console.log("Connected to MongoDB"))
@@ -127,11 +128,11 @@ app.get("/notfound", (req, res)=>{
 
 
 
-app.get("*", (req, res)=>{
-    res.redirect("/notfound")
-})
+app.use("/api/tests",testsRoutes);
 
-
+app.get("*", (req, res) => {
+  res.redirect("/notfound");
+});
 const port=process.env.PORT||5000
 
 
