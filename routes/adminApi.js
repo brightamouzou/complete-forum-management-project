@@ -10,7 +10,7 @@ const adminSettingsControllers=require("../controllers/admin/settings");
 
 
 
-//LIste des forums et autres
+//Liste des forums et autres
 
 router.post("/signup",isAuthCheck,adminControllers.signup); //signup de l'admin
 router.post("/login", adminControllers.login);

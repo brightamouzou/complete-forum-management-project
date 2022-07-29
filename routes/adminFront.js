@@ -5,15 +5,22 @@ const isAuthCheckOnLoginPage=require("../middleware/isAuthCheck.js/isAuthCheckOn
 const Comment=require("../models/Comment")
 const { error } = require("npmlog")
 
-
-
-
 const router=require("express").Router();
 
 router.get("/", isAuthCheck,forumsGetting,(req, res)=>{
-   
-    res.render("admin", {forums:req.session.forums, user:req.session.user})
- 
+    const {lastForumDeleteError}=req.session;
+    
+    req.session.lastForumDeleteError="";
+
+   if(req.session.forums.length)
+        res.render("admin", {
+          forums: req.session.forums,
+          user: req.session.user,
+          lastForumDeleteError: (lastForumDeleteError && lastForumDeleteError.length)?lastForumDeleteError:"",
+        });
+   else
+        res.render("admin", {forums:[], user:req.session.user})
+
 })
 
 router.get("/changeParams", isAuthCheck,  (req, res)=>{
@@ -33,7 +40,6 @@ router.get("/forums/:id",isAuthCheck,forumsGetting, async(req, res)=>{
 
      
         res.render("forumAdmin", {currentForum, comments})
-
 
     }catch(err){
         res.redirect("/notfound")

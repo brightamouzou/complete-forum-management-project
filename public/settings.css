@@ -49,6 +49,10 @@ button{
 
 }
 
+.text-danger{
+    color: var(--danger);
+}
+
 .positionStatic{
     position: static;
 }

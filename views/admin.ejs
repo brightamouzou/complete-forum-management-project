@@ -13,7 +13,12 @@
 
     <%-include('./partials/adminNav.ejs')%>
     <main>
-        <%if (forums){%>
+        <p class="text-danger">
+            <%if(lastForumDeleteError){%>
+                <span><%=lastForumDeleteError%></span>
+            <%}%>
+        </p>
+        <%if (forums.length){%>
             <div class="forums">
 
                 <%forums.forEach((ele)=>{%>

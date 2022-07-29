@@ -19,6 +19,9 @@ const forumsGetting=require("./middleware/forumsGetting")
 const commentsGetting=require("./middleware/commentsGetting")
 const  Comment=require("./models/Comment");
 const Answer = require("./models/Answer");
+const cors=require("cors");
+
+// app.use(cors());
 
 const testsRoutes=require("./routes/testRoute")
 dotenv.config();
@@ -59,7 +62,6 @@ app.use(session({
 app.use("/forums", express.static("public"))
 
 
-
 app.get("/",forumsGetting,(req, res)=>{
 
     const currentForum=req.session.forums[0]
@@ -69,7 +71,6 @@ app.get("/",forumsGetting,(req, res)=>{
 })
 
 
-
 app.get("/forums/:id", forumsGetting, async (req, res)=>{
     try{
         const currentForum=await Forum.findOne({_id:req.params.id})
@@ -77,7 +78,6 @@ app.get("/forums/:id", forumsGetting, async (req, res)=>{
         const comments=await Comment.find({forumId:req.params.id})
 
         comments.reverse()
-
      
         res.render("index", {currentForum, comments})
 

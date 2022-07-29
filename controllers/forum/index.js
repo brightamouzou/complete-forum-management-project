@@ -23,15 +23,16 @@ module.exports.deleteForm=async(req, res)=>{
 
     try{
         const forum=await Forum.findOne({_id:req.params.id})
+        console.log("count ", await Forum.count({}));
         console.log(forum)
+        req.session.lastForumDeleteError="L'administrateur de ce site ne vous permet de supprimer tous les forums."
 
-        if (forum){
+
+        if (forum && await Forum.count({})>1){
             await Forum.deleteOne({_id:req.params.id})
             console.log("deleted");
-
-        }else{
-            res.redirect("/admin")
-
+        }else if (Forum.count({})<1) {
+          req.session.lastForumDeleteError ="L'administrateur de ce site ne vous permet de supprimer tous les forums.";
         }
         return res.redirect('/admin')
 

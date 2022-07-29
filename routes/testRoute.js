@@ -2,6 +2,8 @@ const router = require("express").Router();
 const bcrypt=require("bcrypt");
 const TestUser = require("../models/TestUser");
 const jwt=require("jsonwebtoken")
+const cors=require("cors");
+
 router.post('/signup',(req,res)=>{
      bcrypt.hash(req.body.password, 10)
       .then(hash => {
